@@ -51,7 +51,8 @@ Click the Event sources tab and click the Add event source link. Choose the type
 * Schedule Expression: cron(0 * * * ? *)
 Click submit and your function will run every hour at 0 minutes. You can change the cron expression to your desired schedule.
 
-#### Test function
+#### Test function (Dry run feature)
+
 You can test the function from the Lambda console. Click the Actions button and select Configure test event. Choose Scheduled Event from the drop down. Change the account parameter to your actual AWS account number and you can modify the time parameter to a time relativly close to the current time. Note that the script does not expect the time to be before any of the time stamps on the snapshots, so choose a time in the future, or the current time. Add the following parameter to the structure "noop": "True".  This will tell the script to not actually delete any snapshots, but to print that it would have. Now you can press the Save and Test button and you will see the results of the script running in the Lambda console.
 
 #### CloudWatch logs
